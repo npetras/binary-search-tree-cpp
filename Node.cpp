@@ -11,32 +11,38 @@ Node<T>::Node(T value, Node *left, Node *right) {
     this->right = right;
 }
 
+template<typename T>
 Node<T>::~Node() {
     delete left;
     delete right;
 }
 
-int Node::getValue() const {
+template<typename T>
+int Node<T>::getValue() const {
     return value;
 }
 
-void Node::setValue(int value) {
+template<typename T>
+void Node<T>::setValue(int value) {
     Node::value = value;
 }
 
-Node *Node::getLeft() const {
+template<typename T>
+Node<T>* Node<T>::getLeft() const {
     return left;
 }
 
-void Node::setLeft(Node *left) {
+template<typename T>
+void Node<T>::setLeft(Node *left) {
     Node::left = left;
 }
-
-Node *Node::getRight() const {
+template<typename T>
+Node<T>* Node<T>::getRight() const {
     return right;
 }
 
-void Node::setRight(Node *right) {
+template<typename T>
+void Node<T>::setRight(Node *right) {
     Node::right = right;
 }
 

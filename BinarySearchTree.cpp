@@ -5,24 +5,28 @@
 #include <iostream>
 #include "BinarySearchTree.h"
 
-BinarySearchTree::BinarySearchTree() {
-    root = nullptr;
+template<typename T>
+BinarySearchTree<T>::BinarySearchTree() {
+    this->root = nullptr;
+}
+template<typename T>
+BinarySearchTree<T>::~BinarySearchTree() {
+    delete this->root;
 }
 
-BinarySearchTree::~BinarySearchTree() {
-    delete root;
+template<typename T>
+Node<T>* BinarySearchTree<T>::createNode(T value) {
+    return new Node<T>(value, nullptr, nullptr);
 }
 
-Node* BinarySearchTree::createNode(int value) {
-    return new Node(value, nullptr, nullptr);
-}
-
-void BinarySearchTree::insert(int value) {
-    Node* newNode = createNode(value);
+template<typename T>
+void BinarySearchTree<T>::insert(T value) {
+    Node<T>* newNode = createNode(value);
     insertNode(newNode, root);
 }
 
-void BinarySearchTree::insertNode(Node *nodeToAdd, Node* currRoot) {
+template<typename T>
+void BinarySearchTree<T>::insertNode(Node<T>* nodeToAdd, Node<T>* currRoot) {
     if (this->root == nullptr) {
       this->root = nodeToAdd;
     } else if (currRoot->getLeft() == nullptr && currRoot->getValue() <= nodeToAdd->getValue()) {
@@ -41,7 +45,8 @@ void BinarySearchTree::insertNode(Node *nodeToAdd, Node* currRoot) {
     }
 }
 
-void BinarySearchTree::printInOrder() {
+template<typename T>
+void BinarySearchTree<T>::printInOrder() {
     if (root == nullptr) {
         std::cout << "Empty Tree" << std::endl;
         return;
@@ -49,7 +54,8 @@ void BinarySearchTree::printInOrder() {
     printInOrderHelper(root);
 }
 
-void BinarySearchTree::printInOrderHelper(Node* currRoot) {
+template<typename T>
+void BinarySearchTree<T>::printInOrderHelper(Node<T>* currRoot) {
     if (currRoot == nullptr) {
         return;
     }

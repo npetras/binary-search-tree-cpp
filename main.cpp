@@ -2,10 +2,17 @@
 #include "BinarySearchTree.h"
 
 int main() {
-    BinarySearchTree bst;
+    BinarySearchTree<int> intBst;
+    BinarySearchTree<std::string> stringBst;
 
-    bst.insert(111);
-    bst.insert(22);
-    bst.insert(24);
-    bst.printInOrder();
+    intBst.insert(111);
+    intBst.insert(22);
+    intBst.insert(24);
+    intBst.printInOrder();
+
+    stringBst.insert("pet");
+    stringBst.insert("hot");
+    stringBst.insert("alp");
+
+
 }

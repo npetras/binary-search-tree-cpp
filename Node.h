@@ -6,7 +6,6 @@
 #define P11_BINARY_TREE_CLION_NODE_H
 
 template<typename T>
-
 class Node {
     T value;
     Node* left;
@@ -28,6 +27,5 @@ public:
 
     virtual ~Node();
 };
-
 
 #endif //P11_BINARY_TREE_CLION_NODE_H

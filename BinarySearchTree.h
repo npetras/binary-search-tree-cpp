@@ -8,18 +8,19 @@
 
 #include "Node.h"
 
+template<typename T>
 class BinarySearchTree {
-    Node* root;
+    Node<T>* root;
 
     // utility (private) methods
-    void printInOrderHelper(Node *currRoot);
-    void insertNode(Node* nodeToAdd,  Node* root);
-    static Node* createNode(int value);
+    void printInOrderHelper(Node<T> *currRoot);
+    void insertNode(Node<T>* nodeToAdd,  Node<T>* root);
+    static Node<T>* createNode(T value);
 
 public:
     BinarySearchTree();
     ~BinarySearchTree();
-    void insert(int value);
+    void insert(T value);
     void printInOrder();
 };
 
