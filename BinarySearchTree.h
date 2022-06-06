@@ -11,13 +11,14 @@
 class BinarySearchTree {
     Node* root;
 
+    // utility (private) methods
     void printInOrderHelper(Node *currRoot);
     void insertNode(Node* nodeToAdd,  Node* root);
+    static Node* createNode(int value);
 
 public:
     BinarySearchTree();
     ~BinarySearchTree();
-    Node* createNode(int value);
     void insert(int value);
     void printInOrder();
 };
