@@ -5,13 +5,14 @@
 #ifndef P11_BINARY_TREE_CLION_NODE_H
 #define P11_BINARY_TREE_CLION_NODE_H
 
+template<typename T>
 
 class Node {
-    int value;
+    T value;
     Node* left;
     Node* right;
 public:
-    Node(int value, Node* left, Node* right);
+    Node(T value, Node* left, Node* right);
 
     int getValue() const;
 

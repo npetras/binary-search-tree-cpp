@@ -4,13 +4,14 @@
 
 #include "Node.h"
 
-Node::Node(int value, Node* left, Node* right) {
+template<typename T>
+Node<T>::Node(T value, Node *left, Node *right) {
     this->value = value;
     this->left = left;
     this->right = right;
 }
 
-Node::~Node() {
+Node<T>::~Node() {
     delete left;
     delete right;
 }
@@ -38,3 +39,5 @@ Node *Node::getRight() const {
 void Node::setRight(Node *right) {
     Node::right = right;
 }
+
+

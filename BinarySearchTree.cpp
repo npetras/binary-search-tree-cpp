@@ -25,7 +25,7 @@ void BinarySearchTree::insert(int value) {
 void BinarySearchTree::insertNode(Node *nodeToAdd, Node* currRoot) {
     if (this->root == nullptr) {
       this->root = nodeToAdd;
-    } else if (currRoot->getLeft() == nullptr && currRoot->getValue() < nodeToAdd->getValue()) {
+    } else if (currRoot->getLeft() == nullptr && currRoot->getValue() <= nodeToAdd->getValue()) {
         currRoot->setLeft(nodeToAdd);
         return;
     } else if (currRoot->getRight() == nullptr && currRoot->getValue() > nodeToAdd->getValue()) {
